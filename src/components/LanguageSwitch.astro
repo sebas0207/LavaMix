@@ -1,0 +1,34 @@
+---
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const nextLang = currentLang === "en" ? "de" : "en";
+const nextPath = nextLang === "en" ? "/" : `/${nextLang}`;
+---
+
+<div class="fixed top-6 right-4 z-50">
+  <button
+    class="inline-flex items-center hover:opacity-80 transition-opacity"
+    onclick={`window.location.href = '${nextPath}'`}
+  >
+    {
+      currentLang === "en" ? (
+        <img
+          src="https://flagcdn.com/w40/de.png"
+          alt="Deutsche Flagge"
+          class="w-8 h-auto"
+          title="Auf Deutsch anzeigen"
+        />
+      ) : (
+        <img
+          src="https://flagcdn.com/w40/gb.png"
+          alt="British Flag"
+          class="w-8 h-auto"
+          title="Show in English"
+        />
+      )
+    }
+  </button>
+</div>

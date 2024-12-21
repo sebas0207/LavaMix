@@ -1,0 +1,117 @@
+---
+import CardD from "../components/CardDark.astro";
+import CardBlue from "../components/CardBlue.astro";
+import BasePage from "./BasePage.astro";
+import LanguageSwitch from "../components/LanguageSwitch.astro";
+import { translations } from "../i18n/translations.ts";
+
+interface Props {
+  title: string;
+  lang: string;
+}
+
+const { title, lang } = Astro.props;
+const t = translations[lang];
+---
+
+<BasePage title={title} lang={lang}>
+  <main class="container mx-auto px-2 sm:px-4 max-w-md">
+    <section class="flex flex-col justify-center py-4 sm:py-6">
+      <div class="p-2">
+        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+          <h1
+            class="text-3xl sm:text-4xl text-center inline-block max-w-xs break-words"
+          >
+            {t.washingTitle}
+          </h1>
+          <LanguageSwitch currentLang={lang} />
+        </div>
+      </div>
+      <!-- Rest of the content remains the same -->
+      <div class="space-y-3 sm:space-y-4">
+        <div>
+          <CardD number="1">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.load.title}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold text-start mt-2 sm:mt-2">
+              {t.load.subtitle}
+            </p>
+          </CardD>
+        </div>
+        <div>
+          <CardD number="2">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.payment.title}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold mt-2">
+              {t.payment.subtitle}
+            </p>
+          </CardD>
+        </div>
+        <div>
+          <CardD number="3">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.program.washTitle}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold mt-2">
+              {t.program.washSubtitle}
+            </p>
+          </CardD>
+        </div>
+        <div>
+          <CardD number="4">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.start.title}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold mt-2">
+              {t.start.subtitle}
+            </p>
+          </CardD>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex flex-col justify-center py-2 sm:py-6">
+      <h1 class="text-3xl sm:text-4xl mb-4 sm:mb-6 text-center">
+        {t.dryingTitle}
+      </h1>
+      <div class="space-y-3 sm:space-y-4">
+        <div>
+          <CardBlue number="1">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.load.title}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold text-start mt-2 sm:mt-2">
+              {t.load.subtitle}
+            </p>
+          </CardBlue>
+        </div>
+        <div>
+          <CardBlue number="2">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.payment.title}
+            </h1>
+          </CardBlue>
+        </div>
+        <div>
+          <CardBlue number="3">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.program.dryTitle}
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold mt-2">
+              {t.program.drySubtitle}
+            </p>
+          </CardBlue>
+        </div>
+        <div>
+          <CardBlue number="4">
+            <h1 class="text-base sm:text-lg font-bold">
+              {t.start.title}
+            </h1>
+          </CardBlue>
+        </div>
+      </div>
+    </section>
+  </main>
+</BasePage>
