@@ -4,6 +4,8 @@ import CardBlue from "../components/CardBlue.astro";
 import BasePage from "./BasePage.astro";
 import LanguageSwitch from "../components/LanguageSwitch.astro";
 import { translations } from "../i18n/translations.ts";
+import DryingProgram from "../components/DryingProgram.astro";
+import BubbleLogo from "../components/BubbleLogo.astro";
 
 interface Props {
   title: string;
@@ -26,6 +28,7 @@ const t = translations[lang];
           </h1>
           <LanguageSwitch currentLang={lang} />
         </div>
+        <BubbleLogo />
       </div>
       <!-- Rest of the content remains the same -->
       <div class="space-y-3 sm:space-y-4">
@@ -112,6 +115,21 @@ const t = translations[lang];
           </CardBlue>
         </div>
       </div>
+    </section>
+    <section class="flex flex-col justify-center py-2 sm:py-6">
+      <h1 class="text-3xl sm:text-4xl mb-4 sm:mb-6 text-center">
+        {t.program.dryingProgram}
+      </h1>
+      <DryingProgram>
+        <div class="text-center">
+          <h1 class="text-[#374151] sm:text-lg font-bold">
+            {t.load.dryTitle}
+          </h1>
+          <p class="text-[#374151] text-xs sm:text-sm font-semibold mt-2">
+            {t.load.drySubtitle}
+          </p>
+        </div>
+      </DryingProgram>
     </section>
   </main>
 </BasePage>
