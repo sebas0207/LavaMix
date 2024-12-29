@@ -32,7 +32,7 @@ export const translations: Translations = {
     dryingTitle: "Drying instructions",
     load: {
       title: "Load the washing machine and close the door.",
-      subtitle: "Remember to close pockets and zippers.",
+      subtitle: "Remember to empty the pockets and close the zippers.",
       dryTitle: "The drying process will continue",
       drySubtitle:"You can increase the drying time before the end of the cycle: enter 1 euro for 10 minutes or 2 euros for 20 minutes."
     },
@@ -57,7 +57,7 @@ export const translations: Translations = {
     dryingTitle: "Trocknungsanleitung",
     load: {
       title: "Waschmaschine beladen und Tür schließen.",
-      subtitle: "Denken Sie daran, Taschen und Reißverschlüsse zu schließen.",
+      subtitle: "Denken Sie daran, die Taschen zu leeren und die Reißverschlüsse zu schließen.",
       dryTitle: "Der Trocknungsprozess wird fortgesetzt",
       drySubtitle:"Sie können die Trocknungszeit vor dem Ende des Zyklus erhöhen: Geben Sie 1 Euro für 10 Minuten oder 2 Euro für 20 Minuten ein.",
     },
